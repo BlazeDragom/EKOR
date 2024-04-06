@@ -1,0 +1,103 @@
+@mixin respond-to($media) {
+    @if $media== "phone" {
+        @media (max-width: 376px) {
+            @content;
+        }
+    } @else if $media== "phone-320" {
+        @media (max-width: 320px) {
+            @content;
+        }
+    } @else if $media== "phone-360" {
+        @media (max-width: 361px) {
+            @content;
+        }
+    } @else if $media== "phone-412" {
+        @media (max-width: 413px) {
+            @content;
+        }
+    } @else if $media== "phone-390" {
+        @media (max-width: 391px) {
+            @content;
+        }
+    } @else if $media== "tablet" {
+        @media (max-width: 768px) {
+            @content;
+        }
+    } @else if $media== "laptop" {
+        @media (max-width: 1024px) {
+            @content;
+        }
+    }
+}
+@mixin click() {
+    position: relative;
+    top: 0.1rem;
+}
+
+@mixin flex-row($justify: space-between, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin flex-column-reverse() {
+    display: flex;
+    flex-direction: column-reverse;
+}
+@mixin flex-row-center() {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-column() {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-column-center() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin text-fw-500() {
+    font-size: $font-size-s;
+    font-weight: 500;
+    color: $clr-primary-dark-blue;
+}
+
+@mixin text-fw-600() {
+    font-size: $font-size-s;
+    font-weight: 600;
+    color: $clr-primary-dark-blue;
+}
+
+@mixin mobile-title-fz-24() {
+    font-size: $font-size-x;
+    font-weight: 600;
+    color: $clr-primary-dark-blue;
+}
+
+@mixin mobile-title-fz-18() {
+    font-size: $font-size-l;
+    font-weight: 600;
+    color: $clr-primary-dark-blue;
+}
+
+@mixin mobile-text-fz-14() {
+    font-size: $font-size-s;
+    font-weight: 500;
+    color: $clr-primary-dark-blue;
+}
+
+@mixin mobile-text-fz-12() {
+    font-size: $font-size-ss;
+    font-weight: 500;
+    color: $clr-primary-gray;
+}
+
+@mixin text-fz-16() {
+    font-size: $font-size-m;
+    font-weight: 600;
+    color: $clr-primary-dark-blue;
+}

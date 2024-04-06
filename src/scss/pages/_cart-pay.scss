@@ -1,0 +1,718 @@
+@import "../scss-utils/variables";
+@import "../scss-utils/mixins";
+@import "../scss-utils/functions";
+@import "../components/card";
+@import "../components/btn";
+
+.back {
+    width: 20rem;
+    height: 4rem;
+    margin-top: 2.3rem;
+    margin-bottom: 4rem;
+    padding: .5rem 0;
+
+    transition: $transition-fast;
+    a {
+        color: $clr-primary-gray;
+        font-size: $font-size-s;
+        span {
+            display: inline-block;
+            padding: 0.5rem 0.7rem;
+            background: $clr-white;
+            border: 2px solid $clr-background;
+            border-radius: 4px;
+            i {
+                font-size: $font-size-ss;
+            }
+        }
+    }
+    &:hover{
+        background: $clr-background-2;
+        border-radius: $radius-large;
+    }
+    &:active{
+        @include click();
+    }
+}
+
+.path {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include respond-to('tablet') {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    @include respond-to('phone-320') {
+        display: none;
+    }
+    .cart {
+        padding: 1.8rem 2rem;
+        border-top-left-radius: $radius-regular;
+        border-bottom-left-radius: $radius-regular;
+        background: $clr-white;
+        transition: $transition-fast;
+        a {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            span {
+                display: inline-block;
+                width: 2.4rem;
+                height: 2.4rem;
+                display: grid;
+                place-items: center;
+                background: $clr-primary-dark-blue;
+                border-radius: 50%;
+                color: $clr-white;
+                font-size: $font-size-ss;
+                transition: $transition-fast;
+                &:hover{
+                    background: $clr-primary-light-blue;
+                }
+            }
+            p {
+                font-size: $font-size-s;
+                font-weight: 500;
+                color: $clr-primary-dark-blue;
+                transition: $transition-fast;
+                &:hover{
+                    color: $clr-primary-light-blue;
+                }
+            }
+        }
+        &:hover{
+            background: $clr-background-2;
+        }
+    }
+    .adress {
+        padding: 1.8rem 2rem;
+        background: $clr-white;
+        border-left: 1px solid $clr-background;
+        transition: $transition-fast;
+        @include respond-to('tablet') {
+            grid-column: 2 / 4;
+        }
+        a {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            span {
+                display: inline-block;
+
+                width: 2.4rem;
+                height: 2.4rem;
+
+                display: grid;
+                place-items: center;
+
+                background: $clr-primary-dark-blue;
+                border-radius: 50%;
+
+                color: $clr-white;
+                font-size: $font-size-ss;
+
+                transition: $transition-fast;
+
+                &:hover{
+                    background: $clr-primary-light-blue;
+                }
+            }
+            p {
+                @include text-fw-500();
+                transition: $transition-fast;
+                &:hover{
+                    color: $clr-primary-light-blue;
+                }
+            }
+            
+        }
+        &:hover{
+            background: $clr-background-2;
+        }
+    }
+    .pay {
+        padding: 1.8rem 2rem;
+        background: $clr-white;
+        border-left: 1px solid $clr-background;
+
+        transition: $transition-fast;
+        a {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            span {
+                display: inline-block;
+                width: 2.4rem;
+                height: 2.4rem;
+                display: grid;
+                place-items: center;
+                background: $clr-primary-dark-blue;
+                border-radius: 50%;
+                color: $clr-white;
+                font-size: $font-size-ss;
+                transition: $transition-fast;
+                &:hover{
+                    background: $clr-primary-light-blue;
+                }
+            }
+            p {
+                font-size: $font-size-s;
+                font-weight: 500;
+                color: $clr-primary-dark-blue;
+                transition: $transition-fast;
+                &:hover{
+                    color: $clr-primary-light-blue;
+                }
+            }
+        }
+        &:hover{
+            background: $clr-background-2;
+        }
+    }
+    .thankyou {
+        padding: 1.8rem 2rem;
+
+        border-left: 1px solid $clr-background;
+
+        border-top-right-radius: $radius-regular;
+        border-bottom-right-radius: $radius-regular;
+
+        background: $clr-background-2;
+        a {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            span {
+                display: inline-block;
+                width: 2.4rem;
+                height: 2.4rem;
+                display: grid;
+                place-items: center;
+                background: $clr-white;
+                border-radius: 50%;
+                color: $clr-primary-gray;
+                font-size: $font-size-ss;
+            }
+            p {
+                font-size: $font-size-s;
+                font-weight: 500;
+                color: $clr-primary-gray;
+            }
+        }
+    }
+}
+
+.main-holder {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+    @include respond-to('tablet') {
+        display: block;
+    }
+}
+.section {
+    width: 100%;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background: $clr-white;
+    border-radius: $radius-large;
+    transition: $transition-fast;
+    @include respond-to('phone-320'){
+        padding: 1.2rem 1.5rem;
+    }
+    &:hover {
+        transform: scale(1.02);
+        animation: shake ease-in-out 0.5s 1;
+    }
+}
+
+.main {
+    width: 100%;
+    .information {
+        .text {
+            width: 31rem;
+            font-size: $font-size-s;
+            font-weight: 500;
+            color: $clr-primary-gray;
+            line-height: 18.2px;
+            span {
+                color: $clr-primary-dark-blue;
+            }
+        }
+    }
+    .payment {
+        .payment-ways {
+            @include flex-column();
+            gap: 2rem;
+            .cashless-pay {
+                display: flex;
+                align-items: center;
+                gap: 1.3rem;
+                input {
+                    width: 2rem;
+                    height: 2rem;
+                    position: relative;
+                    outline: none;
+                    appearance: none;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        cursor: pointer;
+                        border: 2px solid $clr-primary-dark-blue;
+                        border-radius: 50%;
+                    }
+                    &:before {
+                        content: "";
+                        display: none;
+                        position: absolute;
+                        top: 25%;
+                        left: 25%;
+                        width: 50%;
+                        height: 50%;
+                        cursor: pointer;
+                        background: $clr-primary-dark-blue;
+                        border-radius: 50%;
+                    }
+                    &:checked + &:before {
+                        display: block;
+                    }
+                }
+                label{
+                    .text-top{
+                        @include text-fz-16();
+                        @include respond-to('phone-320'){
+                            @include mobile-text-fz-14();
+                        }
+                    }
+                    .text-bottom{
+                        @include mobile-text-fz-14();
+                        @include respond-to('phone-320'){
+                            @include mobile-text-fz-12();
+                        }
+                        transition: $transition-fast;
+                        &:hover{
+                            color: $clr-primary-light-blue;
+                        }
+                        &:active{
+                            @include click();
+                        }
+                    }
+                }
+            }
+            .delay-pay {
+                display: flex;
+                gap: 1.3rem;
+                input {
+                    width: 2rem;
+                    height: 2rem;
+                    position: relative;
+                    outline: none;
+                    appearance: none;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        cursor: pointer;
+                        border: 2px solid $clr-primary-dark-blue;
+                        border-radius: 50%;
+                    }
+                    &:before {
+                        content: "";
+                        display: none;
+                        position: absolute;
+                        top: 25%;
+                        left: 25%;
+                        width: 50%;
+                        height: 50%;
+                        cursor: pointer;
+                        background: $clr-primary-dark-blue;
+                        border-radius: 50%;
+                    }
+                    &:checked + &:before {
+                        display: block;
+                    }
+                }
+                label{
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+                    .text{
+                        @include text-fz-16();
+                        @include respond-to('phone-320'){
+                            @include mobile-text-fz-14();
+                        }
+                    }
+                    i{
+                        font-size: $font-size-m;
+                        color: $clr-primary-gray;
+                        transition: $transition-fast;
+                        &:hover{
+                            color: $clr-primary-dark-blue;
+                        }
+                    }
+                }
+            }
+            .cash-pay {
+                display: flex;
+                align-items: center;
+                gap: 1.3rem;
+                input {
+                    width: 2rem;
+                    height: 2rem;
+
+                    position: relative;
+
+                    outline: none;
+                    appearance: none;
+
+                    flex-shrink: 0;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        cursor: pointer;
+                        border: 2px solid $clr-primary-dark-blue;
+                        border-radius: 50%;
+                    }
+                    &:before {
+                        content: "";
+                        display: none;
+                        position: absolute;
+                        top: 25%;
+                        left: 25%;
+                        width: 50%;
+                        height: 50%;
+                        cursor: pointer;
+                        background: $clr-primary-dark-blue;
+                        border-radius: 50%;
+                    }
+                    &:checked + &:before {
+                        display: block;
+                    }
+                }
+                label{
+                    .text{
+                        @include text-fz-16();
+                        @include respond-to('phone-320'){
+                            @include mobile-text-fz-14();
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .more-information{
+        @include respond-to('phone-320') {
+            display: none;
+        }
+        .info-check{
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 1.1rem;
+            margin-bottom: 2rem;
+            input{
+                appearance: none;
+                outline: none;
+                cursor: pointer;
+                width: 2rem;
+                height: 2rem;
+                background: $clr-primary-dark-blue;
+                border-radius: $radius-small;
+            }
+            i{
+                display: none;
+                position: absolute;
+                top: 25%;
+                left: .5rem;
+                color: $clr-white;
+                cursor: pointer;
+            }
+            input:checked ~ i{
+                display: block;
+            }
+            label{
+                font-size: $font-size-s;
+                font-weight: 500;
+                color: $clr-primary-gray;
+            }
+        }
+        .cass-check{
+            .section-sub-title{
+                font-size: $font-size-m;
+                font-weight: 600;
+                color: $clr-primary-dark-blue;
+            }
+            .method-check{
+                margin-top: 2rem;
+                .sms-check{
+                    display: flex;
+                    align-items: center;
+                    gap: 1.2rem;
+                    margin-bottom: 2rem;
+                    input {
+                        width: 2rem;
+                        height: 2rem;
+                        position: relative;
+                        outline: none;
+                        appearance: none;
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            cursor: pointer;
+                            border: 2px solid $clr-primary-dark-blue;
+                            border-radius: 50%;
+                        }
+                        &:before {
+                            content: "";
+                            display: none;
+                            position: absolute;
+                            top: 25%;
+                            left: 25%;
+                            width: 50%;
+                            height: 50%;
+                            cursor: pointer;
+                            background: $clr-primary-dark-blue;
+                            border-radius: 50%;
+                        }
+                        &:checked + &:before {
+                            display: block;
+                        }
+                    }
+                    .text{
+                        font-size: $font-size-s;
+                        font-weight: 500;
+                        color: $clr-primary-gray;
+                        span{
+                            color: $clr-primary-dark-blue;
+                        }
+                    }
+                }
+                .mail-check{
+                    display: flex;
+                    align-items: center;
+                    gap: 1.2rem;
+                    input {
+                        width: 2rem;
+                        height: 2rem;
+                        position: relative;
+                        outline: none;
+                        appearance: none;
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            cursor: pointer;
+                            border: 2px solid $clr-primary-dark-blue;
+                            border-radius: 50%;
+                        }
+                        &:before {
+                            content: "";
+                            display: none;
+                            position: absolute;
+                            top: 25%;
+                            left: 25%;
+                            width: 50%;
+                            height: 50%;
+                            cursor: pointer;
+                            background: $clr-primary-dark-blue;
+                            border-radius: 50%;
+                        }
+                        &:checked + &:before {
+                            display: block;
+                        }
+                    }
+                    .text{
+                        font-size: $font-size-s;
+                        font-weight: 500;
+                        color: $clr-primary-gray;
+                        span{
+                            color: $clr-primary-dark-blue;
+                        }
+                    }
+                }
+            }
+            
+        }
+        .refused-check{
+            .section-sub-title{
+                width: 37.9rem;
+                margin-bottom: 1rem;
+                font-size: $font-size-m;
+                font-weight: 600;
+                color: $clr-primary-dark-blue;
+            }
+            .text{
+                width: 31rem;
+                margin-bottom: .4rem;
+                font-size: $font-size-s;
+                font-weight: 500;
+                color: $clr-primary-gray;
+            }
+            .text-list{
+                position: relative;
+                left: 1.5rem;
+                .list-items{
+                    font-size: $font-size-s;
+                    font-weight: 500;
+                    color: $clr-primary-gray;
+                    list-style: disc;
+                color: $clr-primary-dark-blue;
+                a{
+                    color: $clr-primary-gray;
+                }
+                }
+            }
+        }
+        .confirm-info{
+            .text{
+                font-size: $font-size-ss;
+                font-weight: 500;
+                color: $clr-primary-gray;
+            }
+            .confirm-more{
+                display: inline-block;
+                margin-top: .4rem;
+                font-size: $font-size-ss;
+                font-weight: 600;
+                color: $clr-primary-gray;
+            }
+        }
+    }
+}
+
+.sidebar {
+    width: 36.4rem;
+    @include respond-to('tablet') {
+        width: 100%;
+    }
+    .min_order{
+        position: relative;
+
+        display: flex;
+        align-items: flex-start;
+        gap: 1.2rem;
+
+        padding: 1.2rem 1.6rem;
+
+
+        overflow: hidden;
+        
+        &::before{
+            content: '';
+            width: .6rem;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $clr-primary-dark-blue;
+        }
+        .icon{
+            width: 3.2rem;
+            height: 3.2rem;
+
+            margin-left: 1.6rem;
+
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+
+            border-radius: $radius-large;
+            background: $clr-background-2;
+            i{
+                font-size: $font-size-s;
+                color: $clr-primary-dark-blue;
+            }
+        }
+        .order-text{
+            font-size: $font-size-s;
+            font-weight: 500;
+            color: $clr-primary-dark-blue;
+            line-height: 18.2px;
+            @include respond-to('tablet') {
+                width: 49.5rem;
+            }
+        }
+    }
+    .order{
+        .promo{
+            .promo-title{
+                font-size: $font-size-m;
+                font-weight: 600;
+                color: $clr-primary-dark-blue;
+            }
+            .flex-holder{
+                @include flex-row();
+                @include respond-to('phone-320'){
+                    @include flex-column();
+                }
+                gap: 1.6rem;
+                margin-top: 1.2rem;
+                input{
+                    height: 4.8rem;
+                    padding: 1.5rem 1.6rem;
+                    background: $clr-background-2;
+                    border: 1px solid $clr-background;
+                    border-radius: $radius-large;
+                    @include text-fw-500();
+                    @include respond-to('tablet') {
+                        width: 31.4rem;
+                        flex-shrink: 0;
+                    }
+                    @include respond-to('phone-320') {
+                        width: 26rem;
+                    }
+                    &::placeholder{
+                        font-size: $font-size-s;
+                        font-weight: 500;
+                        color: $clr-primary-dark-blue;
+                        opacity: 1;
+                    }
+                }
+            }
+            
+        }
+        .cost{
+            .price-holder{
+                @include flex-row();
+                margin-bottom: 1.6rem;
+                .price-text{
+                    @include text-fw-500();
+                }
+                .price{
+                    @include text-fw-600();
+                    .green-clr{
+                        color: $clr-primary-dark-green;
+                    }
+                }
+            }
+            .total-cost{
+                @include flex-row();
+                margin-bottom: 2rem;
+                .price-text{
+                    @include text-fw-500();
+                }
+                .price{
+                    @include text-fw-600();
+                }
+            }
+        }
+    }
+}

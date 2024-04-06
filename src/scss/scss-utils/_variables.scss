@@ -1,0 +1,109 @@
+$clr-white: #FFF;
+$clr-black: #000;
+$clr-red: #F10B34;
+
+$clr-primary-gray: #70798E;
+$clr-primary-dark-blue: #203686;
+$clr-primary-light-blue: #1877F2;
+$clr-primary-yellow: #FFED32;
+$clr-primary-hover-yallow: #FFF681;
+$clr-primary-green: #4ADD47;
+$clr-primary-dark-green: #6BA252;
+
+$clr-background: #DDE1E6;
+$clr-background-2:  #F4F7FB;
+
+$font-size-xxxl: 5rem;
+$font-size-xxl: 4rem;
+$font-size-xl: 3.2rem;
+$font-size-x: 2.4rem;
+$font-size-l: 1.8rem;
+$font-size-m: 1.6rem;
+$font-size-s: 1.4rem;
+$font-size-ss: 1.2rem;
+
+$margin-xxsmall: 1rem;
+$margin-xsmall: 2rem;
+$margin-small: 3rem;
+$margin-regular: 4rem;
+$margin-medium: 5rem;
+$margin-xmedium: 6rem;
+$margin-xxmedium: 7rem;
+$margin-large: 10rem;
+
+$padding-xxsmall: 1rem;
+$padding-xsmall: 2rem;
+$padding-small: 3rem;
+$padding-regular: 4rem;
+$padding-medium: 5rem;
+$padding-large: 10rem;
+
+$transition-fast: 0.3s ease-out;
+$transition-medium: 0.5s ease-out;
+$transition-medium: 0.8s ease-out;
+
+$radius-small: 0.4rem;
+$radius-regular: 0.6rem;
+$radius-large: 0.8rem;
+
+$first-family: "Montserrat", sans-serif;
+
+$container-width: 1120px;
+
+@keyframes opac {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-2deg) scale(1.02); }
+    100% { transform: rotate(0deg) scale(1.03); }
+}
+
+
+@keyframes rainbow-text {
+    0%{
+        color: $clr-primary-dark-blue;
+    }
+    10%{
+        color: $clr-red;
+    }
+    20%{
+        color: $clr-primary-yellow;
+    }
+    30%{
+        color: $clr-primary-dark-green;
+    }
+    40%{
+        color: $clr-primary-light-blue;
+    }
+    60%{
+        color: $clr-white;
+    }
+    70%{
+        color: $clr-primary-green;
+    }
+    80%{
+        color: #d24bcc;
+    }
+    90%{
+        color: #48cde7;
+    }
+}
+
+@keyframes elastic {
+0%{ transform: scale(1); }
+30%{ transform: scaleX(1.25) scaleY(0.75); }
+40%{ transform: scaleX(0.75) scaleY(1.25); }
+60%{ transform: scaleX(1.15) scaleY(0.85); }
+100%{ transform: scale(1); }
+}
